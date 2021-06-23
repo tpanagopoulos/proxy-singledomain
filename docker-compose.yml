@@ -1,0 +1,10 @@
+version: "2.0"
+services:
+  web:
+    image: "ajoergensen/tinyproxy"
+    ports:
+      - "8888:8888"
+    #command: ["ANY"]
+    volumes:
+      - ${PWD}/filter:/etc/tinyproxy/filter:ro
+      - ${PWD}/tinyproxy.conf:/etc/tinyproxy/tinyproxy.conf:ro
